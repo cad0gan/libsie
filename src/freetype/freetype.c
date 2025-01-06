@@ -92,7 +92,7 @@ void Sie_FT_GetStringSize(WSHDR *ws, int font_size, unsigned int *w, unsigned in
 IMGHDR *BrushGlyphIMGHDR(IMGHDR *img, const char *color) {
     IMGHDR *res = malloc(sizeof(IMGHDR));
     memcpy(res, img, sizeof(IMGHDR));
-    size_t size = CalcBitmapSize((short)res->w, (short)res->h, IMGHDR_TYPE_RGB8888);
+    size_t size = CalcBitmapSize((short)res->w, (short)res->h, IMGHDR_TYPE_BGRA8888);
     res->bitmap = malloc(size);
     memcpy(res->bitmap, img->bitmap, size);
     for (int i = 0; i < size; i += 4) {

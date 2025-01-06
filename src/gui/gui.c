@@ -72,10 +72,10 @@ void Sie_GUI_SetRGB(char *rgb, char r, char g, char b) {
 IMGHDR *Sie_GUI_TakeScrot() {
     LockSched();
     IMGHDR *scrot = malloc(sizeof(IMGHDR));
-    size_t size = CalcBitmapSize((short) ScreenW(), (short) ScreenH(), IMGHDR_TYPE_RGB565);
+    size_t size = CalcBitmapSize((short) ScreenW(), (short) ScreenH(), IMGHDR_TYPE_BGR565);
     scrot->w = ScreenW();
     scrot->h = ScreenH();
-    scrot->bpnum = IMGHDR_TYPE_RGB565;
+    scrot->bpnum = IMGHDR_TYPE_BGR565;
     scrot->bitmap = malloc(size);
     memcpy(scrot->bitmap, RamScreenBuffer(), size);
     UnlockSched();

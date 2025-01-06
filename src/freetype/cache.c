@@ -47,8 +47,8 @@ static SIE_FT_GLYPH_CACHE *AddGlyphCache(FT_Face *face, SIE_FT_CACHE *ft_cache, 
     IMGHDR *img = malloc(sizeof(IMGHDR));
     img->w = bitmap->width;
     img->h = bitmap->rows;
-    img->bpnum = IMGHDR_TYPE_RGB8888;
-    img->bitmap = malloc(CalcBitmapSize(img->w, img->h, IMGHDR_TYPE_RGB8888));
+    img->bpnum = IMGHDR_TYPE_BGRA8888;
+    img->bitmap = malloc(CalcBitmapSize(img->w, img->h, IMGHDR_TYPE_BGRA8888));
 
     uint8_t im[img->h][img->w];
     for (int _y = 0, j = 0; _y < img->h; _y++) {
